@@ -39,14 +39,14 @@ export default function Main() {
   function onHandlerStateChange(event) {
     if (event.nativeEvent.oldState === State.ACTIVE) {
       let opened = false;
-      const { translateY } = event.nativeEvent;
+      const { translationY } = event.nativeEvent;
 
-      offset += translateY; 
+      offset += translationY; 
 
       translateY.setOffset(offset);
       translateY.setValue(0);
 
-      if (translateY >= 100){
+      if (translationY >= 100){
         opened = true;
       } else { 
         translateY.setValue(offset);
